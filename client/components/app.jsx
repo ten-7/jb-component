@@ -43,57 +43,6 @@ class App extends React.Component {
         })
     };
 
-    handleRightCarouselClick(e) {
-        e.preventDefault();
-
-        if (this.state.carouselEnd <= this.findallAxesFromTag(this.state.currentTag).length) {
-            let upperBound = this.state.carouselEnd + 5;
-            let lowerBound = this.state.carouselBegin + 5;
-    
-            this.setState({
-                carouselBegin: lowerBound,
-                carouselEnd: upperBound
-            })
-        } else {
-            this.setState({
-                carouselBegin: 0,
-                carouselEnd: 5
-            })
-        }
-    };
-
-    handleLeftCarouselClick(e) {
-        e.preventDefault();
-        if (this.state.carouselBegin !== 0) {
-            if ((this.state.carouselEnd - this.state.carouselBegin) < 5) {
-                let upperBound = this.state.carouselEnd - (this.state.carouselEnd % 5);
-                let lowerBound = upperBound - 5;
-    
-                this.setState({
-                    carouselBegin: lowerBound,
-                    carouselEnd: upperBound
-                })
-            } else {
-                let upperBound = this.state.carouselEnd - 5;
-                let lowerBound = upperBound - 5;
-        
-                if (lowerBound >= 0) {
-                    this.setState({
-                        carouselBegin: lowerBound,
-                        carouselEnd: upperBound
-                    })
-                } 
-            }
-        } else {
-            let upperBound = this.findallAxesFromTag(this.state.currentTag).length;
-            let lowerBound = upperBound - (this.findallAxesFromTag(this.state.currentTag).length % 5)
-            this.setState({
-                carouselBegin: lowerBound,
-                carouselEnd: upperBound
-            })
-        }
-    };
-
     handleProductClick(e, id, tag) {
         e.preventDefault();
         
