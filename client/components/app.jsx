@@ -13,12 +13,12 @@ class App extends React.Component {
             carouselBegin: 0,
             carouselEnd: 5,
             currentId: 0,
-            currentTag: 'war',
+            currentTag: 'battle',
             axes: [
                 {
                     name: 'fighty axe',
                     tag: 'battle',
-                    image: `https://s3.us-east-2.amazonaws.com/axes/battle+axe/1.+battle-axe.jpg`,
+                    images: [`https://s3.us-east-2.amazonaws.com/axes/battle+axe/1.+battle-axe.jpg`],
                     id: 1
                 }
             ]
