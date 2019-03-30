@@ -10,7 +10,7 @@ module.exports = {
         key: '~/.ssh/FEC_Navbar.pem',
         ref: 'origin/master',
         repo: 'https://github.com/axe-center/AAnderson_Carousel_Service.git',
-        path: '/home/ubuntu/',
+        path: '/home/ubuntu/AAnderson_Carousel_Service',
         'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
       }
     }
