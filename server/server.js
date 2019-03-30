@@ -5,6 +5,11 @@ const AWS = require('aws-sdk');
 const randomDescription = require('./random_text.js');
 const db = require('../database/db.js');
 
+AWS.config.update({
+    accessKeyId: process.env.S3Access,
+    secretAccessKey: process.env.S3Secret,
+    region: 'us-east-2'
+});
 
 
 const s3 = new AWS.S3();
@@ -32,7 +37,6 @@ app.get('/api/products', (req, res) => {
             console.log(err);
             res.end()
         } else {
-            console.log(data);
             res.send(data);
         }
     })
