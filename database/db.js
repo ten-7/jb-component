@@ -1,5 +1,13 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/axe-center');
+require('dotenv').config()
+const url = process.env.MONGO_URI;
+mongoose.connect(url, (err, res) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('we made it')
+  }
+});
 
 let productSchema = mongoose.Schema({
   productId: Number,
