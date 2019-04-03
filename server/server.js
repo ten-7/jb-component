@@ -90,7 +90,7 @@ app.post('/seed', (req, res) => {
 
 
 
-app.listen(process.env.PORT || 3000, (err, res) => {
+app.listen(process.env.PORT || 3010, (err, res) => {
     if (err) {
         console.log(err)
     } else {
