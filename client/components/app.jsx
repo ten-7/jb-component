@@ -26,7 +26,7 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/products')
+        axios.get('/api/products')
         .then(results => {
             const tagArr = [];
             const tagObj = {};
