@@ -9,15 +9,12 @@
 
 }
 
-#app {
+#carousel {
   margin-left: 10vw;
   margin-right: 10vw;
 }
 
-#container {
-  display: flex;
-  flex-grow: 1;
-}
+
 
 .carousel_Pics {
   display: flex;
