@@ -79,7 +79,7 @@ class App extends React.Component {
 
     findTagFromId(id) {
         for (let obj of this.state.axes) {
-            if (obj.id === id) {
+            if (obj.productId === id) {
                 return obj.tag;
             }
         }
