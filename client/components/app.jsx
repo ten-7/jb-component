@@ -26,7 +26,7 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        axios.get('/api/products')
+        axios.get('/api/carousel/products')
         .then(results => {
             const tagArr = [];
             const tagObj = {};
@@ -41,6 +41,11 @@ class App extends React.Component {
                 axes: results.data
             });
         })
+        window.addEventListener('productId', (e) => {
+            this.setState({
+                currentId: e.default
+            })
+        })
     };
 
     handleProductClick(e, id, tag) {
@@ -51,7 +56,9 @@ class App extends React.Component {
             currentTag: tag,
             carouselBegin: 0,
             carouselEnd: 5
-        })
+        }, (err, res) => {
+            window.dispatchEvent(new CustomEvent('productId', {"detail": this.state.currentId}))
+        });
     }
 
     findallAxesFromTag(tag) {

@@ -25,13 +25,8 @@ const params = {
     Bucket: 'axes'
 }
 
-app.get('/api', (req, res) => {
 
-    res.send({objectId: 1});
-});
-
-
-app.get('/api/products', (req, res) => {
+app.get('/api/carousel/products', (req, res) => {
     db.getAll((err, data) => {
         if (err) {
             console.log(err);
