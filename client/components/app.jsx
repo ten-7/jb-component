@@ -13,7 +13,7 @@ class App extends React.Component {
             carouselBegin: 0,
             carouselEnd: 5,
             currentId: 0,
-            currentTag: 'battle',
+            currentTag: 'war',
             axes: [
                 {
                     name: 'fighty axe',
@@ -81,7 +81,6 @@ class App extends React.Component {
         };
         return (
         <div id = 'Container'>
-             {this.state.currentId}
             <div>
                 <div className='carousel_Container'>
                     <Slider {...settings}>

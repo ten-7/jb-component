@@ -1,16 +1,22 @@
 .carousel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .carousel_Items {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 
+}
+
+#app {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+#container {
+  display: flex;
+  flex-grow: 1;
 }
 
 .carousel_Pics {
@@ -25,10 +31,12 @@
 .slick-prev {
   z-index: 1 !important;
   left: 20px !important;
-  background-color: black !important;
+  background: rgb(192, 60, 60, 1.0) !important;
+  position: absolute !important;
 }
 .slick-next {
   z-index: 1 !important;
   right: 20px !important;
-  background-color: black !important;
+  background: rgb(192, 60, 60, 1.0) !important;
+  position: absolute !important;
 } 
