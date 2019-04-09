@@ -23,6 +23,7 @@ class App extends React.Component {
                 }
             ]
         }
+        this.findTagFromId = this.findTagFromId.bind(this);
     };
 
     componentDidMount() {
@@ -42,8 +43,12 @@ class App extends React.Component {
             });
         })
         window.addEventListener('productId', (e) => {
+            
             this.setState({
                 currentId: e.detail
+                
+            }, (err, res) => {
+                this.findTagFromId(e.detail);
             })
         })
     };
@@ -73,6 +78,15 @@ class App extends React.Component {
         return taggedAxes
     };
 
+    findTagFromId(id) {
+        for (let obj of this.state.axes) {
+            if (obj.id === id) {
+                this.setState({
+                    currentTag: obj.tag
+                })
+            }
+        }
+    }
     
 
     render() {
