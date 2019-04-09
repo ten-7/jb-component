@@ -43,12 +43,11 @@ class App extends React.Component {
             });
         })
         window.addEventListener('productId', (e) => {
-            
+            let newTag = this.findTagFromId(e.detail);
+            console.log(newTag);
             this.setState({
-                currentId: e.detail
-                
-            }, (err, res) => {
-                this.findTagFromId(e.detail);
+                currentId: e.detail,
+                currentTag: newTag
             })
         })
     };
@@ -81,9 +80,7 @@ class App extends React.Component {
     findTagFromId(id) {
         for (let obj of this.state.axes) {
             if (obj.id === id) {
-                this.setState({
-                    currentTag: obj.tag
-                })
+                return obj.tag;
             }
         }
     }
