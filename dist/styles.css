@@ -26,14 +26,12 @@
   background-color: grey;
 }
 .slick-prev {
-  z-index: 1 !important;
-  left: 20px !important;
+  z-index: 2147483647 !important;
   background: rgb(192, 60, 60, 1.0) !important;
-  position: absolute !important;
+  /* position: absolute !important; */
 }
 .slick-next {
-  z-index: 1 !important;
-  right: 20px !important;
+  z-index: 2147483647 !important;
   background: rgb(192, 60, 60, 1.0) !important;
-  position: absolute !important;
+  /* position: absolute !important; */
 } 
