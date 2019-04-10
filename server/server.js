@@ -4,6 +4,7 @@ const cors = require('cors');
 const AWS = require('aws-sdk');
 const randomDescription = require('./random_text.js');
 const db = require('../database/db.js');
+require('dotenv').config()
 
 AWS.config.update({
     accessKeyId: process.env.S3Access,

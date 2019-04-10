@@ -3,6 +3,8 @@ import Carousel from './carousel.jsx';
 import axios from 'axios';
 import Slider from 'react-slick';
 
+const ec2address = 'http://ec2-3-17-65-225.us-east-2.compute.amazonaws.com'
+
 
 class App extends React.Component {
     constructor(props) {
@@ -25,7 +27,7 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        axios.get('/api/carousel/products')
+        axios.get(`${ec2address}/api/carousel/products`)
         .then(results => {
             const tagArr = [];
             const tagObj = {};
