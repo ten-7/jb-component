@@ -10,8 +10,6 @@ class App extends React.Component {
 
         this.state = {
             tags: [],
-            carouselBegin: 0,
-            carouselEnd: 5,
             currentId: 0,
             currentTag: 'war',
             axes: [
