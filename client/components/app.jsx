@@ -42,7 +42,6 @@ class App extends React.Component {
         })
         window.addEventListener('productId', (e) => {
             let newTag = this.findTagFromId(e.detail);
-            console.log(newTag);
             this.setState({
                 currentId: e.detail,
                 currentTag: newTag
