@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from './carousel.jsx';
 import axios from 'axios';
 import Slider from 'react-slick';
+import './styles.css'
 
 const ec2address = 'http://ec2-3-17-65-225.us-east-2.compute.amazonaws.com'
 
