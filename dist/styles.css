@@ -14,6 +14,10 @@
   margin-right: 10vw;
 }
 
+/* body {
+  background-color: grey;
+
+} */
 
 
 .carousel_Pics {
@@ -25,13 +29,20 @@
 .slick-arrow:hover {
   background-color: grey;
 }
-.slick-prev {
-  z-index: 2147483647 !important;
-  background: rgb(192, 60, 60, 1.0) !important;
-  /* position: absolute !important; */
+
+.slick-arrow {
+  color: black;
 }
-.slick-next {
-  z-index: 2147483647 !important;
-  background: rgb(192, 60, 60, 1.0) !important;
+
+.slick-prev:before {
+  /* background: rgb(192, 60, 60, 1.0) !important; */
   /* position: absolute !important; */
+  color: #a00000 !important;
+
+}
+.slick-next:before {
+  /* z-index: 2147483647 !important; */
+  /* background: rgb(192, 60, 60, 1.0) !important; */
+  /* position: absolute !important; */
+  color: #a00000 !important;
 } 

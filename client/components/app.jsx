@@ -3,7 +3,7 @@ import Carousel from './carousel.jsx';
 import axios from 'axios';
 import Slider from 'react-slick';
 
-const ec2address = 'http://ec2-3-17-65-225.us-east-2.compute.amazonaws.com'
+const ec2address = 'http://localhost:3011'//'http://ec2-3-17-65-225.us-east-2.compute.amazonaws.com'
 
 
 class App extends React.Component {
