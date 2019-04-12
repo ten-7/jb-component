@@ -6,7 +6,7 @@ module.exports = {
     deploy: {
       production: {
         user: 'ubuntu',
-        host: 'ec2-3-17-65-225.us-east-2.compute.amazonaws.com',
+        host: 'ec2-18-222-196-47.us-east-2.compute.amazonaws.com',
         key: '~/.ssh/fec_carousel.pem',
         ref: 'origin/master',
         repo: 'https://github.com/axe-center/AAnderson_Carousel_Service.git',

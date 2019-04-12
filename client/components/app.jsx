@@ -4,7 +4,7 @@ import axios from 'axios';
 import Slider from 'react-slick';
 import './styles.css'
 
-const ec2address = 'http://ec2-3-17-65-225.us-east-2.compute.amazonaws.com'
+const ec2address = 'http://ec2-18-222-196-47.us-east-2.compute.amazonaws.com'
 
 
 class App extends React.Component {
