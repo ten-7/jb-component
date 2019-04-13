@@ -4,7 +4,7 @@ import axios from 'axios';
 import Slider from 'react-slick';
 import './styles.css'
 
-const ec2address = 'http://ec2-18-222-196-47.us-east-2.compute.amazonaws.com'
+const ec2address = 'http://ec2-3-19-29-97.us-east-2.compute.amazonaws.com'
 
 
 class App extends React.Component {
@@ -22,7 +22,13 @@ class App extends React.Component {
                     images: [`https://s3.us-east-2.amazonaws.com/axes/battle+axe/1.+battle-axe.jpg`],
                     id: 1
                 }
-            ]
+            ],
+            divHTML: {
+                products: document.getElementById('products').innerHTML,
+                carousel: document.getElementById('carousel').innerHTML,
+                graph: document.getElementById('graph').innerHTML,
+                reviews: document.getElementById('reviews').innerHTML
+            }
         }
         this.findTagFromId = this.findTagFromId.bind(this);
     };
