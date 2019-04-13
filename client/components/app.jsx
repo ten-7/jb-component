@@ -97,21 +97,23 @@ class App extends React.Component {
           
         };
         return (
-        <div id = 'Container'>
-            <div>
-                <Paper>
-                <div className='carousel_Container'>
-                    <Slider {...settings}>
-                        {this.findallAxesFromTag(this.state.currentTag).map((axe, index) => {
-                            if (this.state.currentId !== axe.productId) {
-                                return <Carousel axe = {axe} key = {index} handleProductClick = {this.handleProductClick.bind(this)}/>
-                            }   
-                        })}
-                    </Slider>
+        <Paper>
+            <div id = 'Container'>
+                <div>
+                    
+                    <div className='carousel_Container'>
+                        <Slider {...settings}>
+                            {this.findallAxesFromTag(this.state.currentTag).map((axe, index) => {
+                                if (this.state.currentId !== axe.productId) {
+                                    return <Carousel axe = {axe} key = {index} handleProductClick = {this.handleProductClick.bind(this)}/>
+                                }   
+                            })}
+                        </Slider>
+                    </div>
+                    
                 </div>
-                </Paper>
             </div>
-        </div>
+        </Paper>
         )
     }
 }
