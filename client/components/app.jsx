@@ -22,13 +22,7 @@ class App extends React.Component {
                     images: [`https://s3.us-east-2.amazonaws.com/axes/battle+axe/1.+battle-axe.jpg`],
                     id: 1
                 }
-            ],
-            divHTML: {
-                products: document.getElementById('products').innerHTML,
-                carousel: document.getElementById('carousel').innerHTML,
-                graph: document.getElementById('graph').innerHTML,
-                reviews: document.getElementById('reviews').innerHTML
-            }
+            ]
         }
         this.findTagFromId = this.findTagFromId.bind(this);
     };
