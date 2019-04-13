@@ -2,7 +2,8 @@ import React from 'react';
 import Carousel from './carousel.jsx';
 import axios from 'axios';
 import Slider from 'react-slick';
-import './styles.css'
+import './styles.css';
+import Paper from '@material-ui/core/Paper';
 
 const ec2address = 'http://ec2-3-19-29-97.us-east-2.compute.amazonaws.com'
 
@@ -57,9 +58,7 @@ class App extends React.Component {
         
         this.setState({
             currentId: id,
-            currentTag: tag,
-            carouselBegin: 0,
-            carouselEnd: 5
+            currentTag: tag
         }, (err, res) => {
             window.dispatchEvent(new CustomEvent('productId', {"detail": this.state.currentId}))
         });
@@ -100,6 +99,7 @@ class App extends React.Component {
         return (
         <div id = 'Container'>
             <div>
+                <Paper>
                 <div className='carousel_Container'>
                     <Slider {...settings}>
                         {this.findallAxesFromTag(this.state.currentTag).map((axe, index) => {
@@ -109,6 +109,7 @@ class App extends React.Component {
                         })}
                     </Slider>
                 </div>
+                </Paper>
             </div>
         </div>
         )
