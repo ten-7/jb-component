@@ -97,8 +97,8 @@ class App extends React.Component {
           
         };
         return (
-        <Paper>
-            <div id = 'Container'>
+        <Paper id = 'paperCarousel'>
+            <div id = 'CarouselContainer'>
                 <div>
                     
                     <div className='carousel_Container'>
