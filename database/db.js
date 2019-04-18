@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config()
-const url = process.env.MONGO_URI;
-mongoose.connect(url, (err, res) => {
+// const url = process.env.MONGO_URI;
+mongoose.connect('mongodb://localhost:27017/sdc',{useNewUrlParser: true} , (err, res) => {
   if (err) {
     console.log(err);
   } else {
@@ -20,7 +20,7 @@ let productSchema = mongoose.Schema({
 
 let Product = mongoose.model('Product', productSchema);
 
-let save = (productId,productName, productImages, productDescription, productPrice, productTag) => {
+let save = (newInserts) => {
   let newThing  = new Product({
       productId: productId,
       name: productName,

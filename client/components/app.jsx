@@ -29,28 +29,28 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        axios.get(`${ec2address}/api/carousel/products`)
-        .then(results => {
-            const tagArr = [];
-            const tagObj = {};
-            for (let obj of results.data) {
-                if (tagObj[obj.tag] === undefined) {
-                    tagArr.push(obj.tag);
-                    tagObj[obj.tag] = 1;
-                }
-            }
-            this.setState({
-                tags: tagArr,
-                axes: results.data
-            });
-        })
-        window.addEventListener('productId', (e) => {
-            let newTag = this.findTagFromId(e.detail);
-            this.setState({
-                currentId: e.detail,
-                currentTag: newTag
-            })
-        })
+        // axios.get(`${ec2address}/api/carousel/products`)
+        // .then(results => {
+        //     const tagArr = [];
+        //     const tagObj = {};
+        //     for (let obj of results.data) {
+        //         if (tagObj[obj.tag] === undefined) {
+        //             tagArr.push(obj.tag);
+        //             tagObj[obj.tag] = 1;
+        //         }
+        //     }
+        //     this.setState({
+        //         tags: tagArr,
+        //         axes: results.data
+        //     });
+        // })
+        // window.addEventListener('productId', (e) => {
+        //     let newTag = this.findTagFromId(e.detail);
+        //     this.setState({
+        //         currentId: e.detail,
+        //         currentTag: newTag
+        //     })
+        // })
     };
 
     handleProductClick(e, id, tag) {
