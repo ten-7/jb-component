@@ -20,21 +20,16 @@ let productSchema = mongoose.Schema({
 
 let Product = mongoose.model('Product', productSchema);
 
-let save = (newInserts) => {
-  let newThing  = new Product({
-      productId: productId,
-      name: productName,
-      images: productImages,
-      price: productPrice,
-      description: productDescription,
-      tag: productTag
-  })
-   
-  newThing.save((err, success) => {
+let save = (newInserts, callback) => {
+  // for (i = 0; i < newInserts.length; i++) {
+
+  // }
+  const newProduct = new Product(newInserts);
+  newProduct.save((err, res) => {
     if (err) {
-      console.log('err')
+      callback(err);
     } else {
-      console.log('success');
+      callback(null);
     }
   })
 }

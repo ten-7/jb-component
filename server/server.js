@@ -22,7 +22,6 @@ const params = {
     Bucket: 'axes'
 }
 
-
 app.get('/api/carousel/products', (req, res) => {
     db.getAll((err, data) => {
         if (err) {
@@ -35,13 +34,43 @@ app.get('/api/carousel/products', (req, res) => {
 });
 
 app.post('/seed', (req, res) => {
+    // for(let i = 0; i < 10; i++) {
+    //     const newInserts = [];
+    //     for(let i = 0; i < 10000; i++) {
+    //         const insert = {
+    //             productId: 1,
+    //             name: "Early Retirement",
+    //             images: [`https://s3.us-east-2.amazonaws.com/axes/battle+axe/1.+battle-axe.jpg`],
+    //             price: 2009,
+    //             description: "Your retirement has come early, but it's not coming with a pension",
+    //             tag: 'battle'
+    //         }
+    //         newInserts.push(insert);
+    //     }
+    //     db.save(newInserts);
+    // }
+
+    db.save({productId: 1,
+        name: "Early Retirement",
+        images: [`https://s3.us-east-2.amazonaws.com/axes/battle+axe/1.+battle-axe.jpg`],
+        price: 2009,
+        description: "Your retirement has come early, but it's not coming with a pension",
+        tag: 'battle'}, (err) => {
+            if (err) {
+                console.error(err);
+                res.end();
+            } else {
+                res.send("success")
+            }
+        })
     
 })
 
-app.listen(process.env.PORT || 3010, (err, res) => {
+const port = process.env.PORT || 3000;
+app.listen(port, (err, res) => {
     if (err) {
         console.log(err)
     } else {
-        console.log('we in dis');
+        console.log(`connection at port ${port}`);
     }
 });
