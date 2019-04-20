@@ -28,9 +28,9 @@ app.get('/api/carousel/products', (req, res) => {
 
 app.post('/seed', (req, res) => {
 
-    // for (let i = 0; i < 5; i++) {
-    //     db.save(fs.readFileSync(path.join(__dirname, `./somePoop${i}.csv`)))
-    // }
+    for (let i = 0; i < 5; i++) {
+        db.save(fs.readFileSync(path.join(__dirname, `../data.csv`)))
+    }
     res.end();
 })
 
