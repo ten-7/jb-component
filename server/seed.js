@@ -14,6 +14,6 @@ for(let i = 0; i < 1; i++) {
       description: 'Your retirement has come early, but it\'s not coming with a pension',
       tag: 'battle'
     }
-    creater.write(JSON.stringify(obj);
+    creater.write(JSON.stringify(obj));
   }
 }
