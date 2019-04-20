@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config()
+// require('dotenv').config()
 // const url = process.env.MONGO_URI;
 mongoose.connect('mongodb://localhost:27017/sdc',{useNewUrlParser: true} , (err, res) => {
   if (err) {
@@ -21,15 +21,11 @@ let productSchema = mongoose.Schema({
 let Product = mongoose.model('Product', productSchema);
 
 let save = (newInserts, callback) => {
-  // for (i = 0; i < newInserts.length; i++) {
-
-  // }
-  const newProduct = new Product(newInserts);
-  newProduct.save((err, res) => {
-    if (err) {
-      callback(err);
+  Product.insertMany(newInserts, (err, res) => {
+    if (error) {
+      callback(err)
     } else {
-      callback(null);
+      callback(null, "success");
     }
   })
 }
