@@ -1,10 +1,14 @@
-const fs = require('file-system');
+const ObjectsToCsv = require('objects-to-csv');
 
-for(let i = 0; i < 1; i++) {
-  const creater = fs.createWriteStream('./data.csv')
-  for(let j = 0; j < 10000000; j++) {
-    if (j % 1000000 === 0) {
-      console.log("mil");
+const makeCsv = async function () {
+  const csv = new ObjectsToCsv(array);
+  await csv.toDisk('./data.csv').concat()
+}
+const array = [];
+setInterval(() => {
+  for(let j = 0; j < 1000000; j++) {
+    if (j % 100000 === 0) {
+      console.log(j/100000);
     }
     const obj = {
       productId: 1,
@@ -14,6 +18,9 @@ for(let i = 0; i < 1; i++) {
       description: 'Your retirement has come early, but it\'s not coming with a pension',
       tag: 'battle'
     }
-    creater.write(JSON.stringify(obj));
+    array.push(obj);
   }
-}
+  makeCsv();
+}, 60000);
+
+//node --max-old-space-size=6144 /home/jonathan/Documents/Repos/jb-component/server/seed.js

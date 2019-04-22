@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost:27017/sdc',{useNewUrlParser: true} , (err,
   }
 });
 
-let productSchema = mongoose.Schema({
+const productSchema = mongoose.Schema({
   productId: Number,
   name: String,
   images: Array,
@@ -18,10 +18,10 @@ let productSchema = mongoose.Schema({
   tag: String
 });
 
-let Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 
-let save = (newInserts, callback) => {
-  Product.insertMany(newInserts, (err, res) => {
+const save = (newInsert, callback) => {
+  Product.save(newInsert, (err, res) => {
     if (error) {
       callback(err)
     } else {
@@ -30,7 +30,9 @@ let save = (newInserts, callback) => {
   })
 }
 
-let getAll = (callback) => {
+
+
+const getAll = (callback) => {
   Product.find({},['productId','name','images','price','description','tag'],
   {
     skip: 0,
@@ -47,10 +49,4 @@ let getAll = (callback) => {
   });
 }
 
-module.exports.save = save;
-
-module.exports.getAll = getAll;
-
-
-
-
+module.exports = { save, getAll };

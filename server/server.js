@@ -27,10 +27,8 @@ app.get('/api/carousel/products', (req, res) => {
 });
 
 app.post('/seed', (req, res) => {
+    const stream = fs.createReadStream('./outputpg.csv');
 
-    for (let i = 0; i < 5; i++) {
-        db.save(fs.readFileSync(path.join(__dirname, `../data.csv`)))
-    }
     res.end();
 })
 
