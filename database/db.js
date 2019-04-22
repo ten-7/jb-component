@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost:27017/sdc',{useNewUrlParser: true} , (err,
 const productSchema = mongoose.Schema({
   productId: Number,
   name: String,
-  images: Array,
+  images: String,
   price: Number,
   description: String,
   tag: String
@@ -21,8 +21,9 @@ const productSchema = mongoose.Schema({
 const Product = mongoose.model('Product', productSchema);
 
 const save = (newInsert, callback) => {
-  Product.save(newInsert, (err, res) => {
-    if (error) {
+  const insert = new Product(newInsert);
+  insert.save((err, res) => {
+    if (err) {
       callback(err)
     } else {
       callback(null, "success");

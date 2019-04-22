@@ -46,7 +46,7 @@ const batch = [
 const seed = (count) => {
   const writePath = (__dirname, `./outputpg.csv`);
   const stream = fs.createWriteStream(writePath);
-  // stream.write('_id,productId,name,description,tag,price,images\n')
+  stream.write('_id,productId,name,description,tag,price,images\n')
   for (let i = 1; i <= count; i++) {
     const r = Math.floor(Math.random()*4);
     stream.write(`${i},${batch[r].productId},${batch[r].name},${batch[r].description},${batch[r].tag},${batch[r].price},${batch[r].images}\n`)

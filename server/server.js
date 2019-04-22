@@ -27,9 +27,21 @@ app.get('/api/carousel/products', (req, res) => {
 });
 
 app.post('/seed', (req, res) => {
-    const stream = fs.createReadStream('./outputpg.csv');
-
-    res.end();
+    db.save({
+        productId: 100,
+        name: 'Soul Flare',
+        images:`https://s3.us-east-2.amazonaws.com/axes/battle+axe/1.+battle-axe.jpg`,
+        price: 499,
+        description: 'Palo santo mixtape occaecat sartorial. Cloud bread YOLO swag',
+        tag: 'throwing'
+    }, (error) => {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log("Success!");
+        }
+        res.end()
+    });
 })
 
 const port = process.env.PORT || 3000;
