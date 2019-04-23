@@ -12,7 +12,7 @@
     "start": "nodemon ./server/server.js",
     "deploy": "pm2 deploy ecosystem.config.js production",
     "restart": "pm2 startOrRestart ecosystem.config.js",
-    "csv":"node ./server/createcsv.js",
+    "csv": "node ./server/createcsv.js",
     "mongo": "mongoimport -d sdc -c axes --type csv --file /home/jonathan/Documents/Repos/jb-component/outputpg.csv --headerline"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "mongoose": "^5.4.20",
     "nodemon": "1.18.10",
     "objects-to-csv": "^1.2.1",
+    "pg": "^7.10.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-slick": "^0.23.2",
