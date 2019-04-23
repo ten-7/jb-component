@@ -12,7 +12,8 @@
     "start": "nodemon ./server/server.js",
     "deploy": "pm2 deploy ecosystem.config.js production",
     "restart": "pm2 startOrRestart ecosystem.config.js",
-    "seedmongo": "mongoimport -d sdc -c axes --type csv --file /home/jonathan/Documents/Repos/jb-component/outputpg.csv --headerline"
+    "csv":"node ./server/createcsv.js",
+    "mongo": "mongoimport -d sdc -c axes --type csv --file /home/jonathan/Documents/Repos/jb-component/outputpg.csv --headerline"
   },
   "dependencies": {
     "@babel/cli": "7.2.3",
