@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-require('dotenv').config()
-const url = process.env.MONGO_URI;
-mongoose.connect(url, (err, res) => {
+// require('dotenv').config()
+// const url = process.env.MONGO_URI;
+mongoose.connect('mongodb://localhost:27017/sdc',{useNewUrlParser: true} , (err, res) => {
   if (err) {
     console.log(err);
   } else {
@@ -9,37 +9,31 @@ mongoose.connect(url, (err, res) => {
   }
 });
 
-let productSchema = mongoose.Schema({
+const productSchema = mongoose.Schema({
   productId: Number,
   name: String,
-  images: Array,
+  images: String,
   price: Number,
   description: String,
   tag: String
 });
 
-let Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 
-let save = (productId,productName, productImages, productDescription, productPrice, productTag) => {
-  let newThing  = new Product({
-      productId: productId,
-      name: productName,
-      images: productImages,
-      price: productPrice,
-      description: productDescription,
-      tag: productTag
-  })
-   
-  newThing.save((err, success) => {
+const save = (newInsert, callback) => {
+  const insert = new Product(newInsert);
+  insert.save((err, res) => {
     if (err) {
-      console.log('err')
+      callback(err)
     } else {
-      console.log('success');
+      callback(null, "success");
     }
   })
 }
 
-let getAll = (callback) => {
+
+
+const getAll = (callback) => {
   Product.find({},['productId','name','images','price','description','tag'],
   {
     skip: 0,
@@ -56,10 +50,7 @@ let getAll = (callback) => {
   });
 }
 
-module.exports.save = save;
+module.exports = { save, getAll };
 
-module.exports.getAll = getAll;
-
-
-
-
+//11:42:23 start
+//11:48:37 end
